@@ -90,12 +90,50 @@
 - busca dados no servidor
 - GET /test/go.asp?nome=Fulano&curso=Computacao 
 - os dados são enviados na URL
+- criando formulario
+```html
+<form action="receptor.php" method="GET">
+<label>nome</label>
+<input type="text" name="nome"/>
+<label>senha</label>
+<input type="password" name="senha"/>
+<input type="submit" value="enviar"/>
+<input type="reset" value="limpar" />
+</form>
+```
+
+- pegando requisição no PHP
+```php
+<?php
+echo "ola,".$_GET["nome"];
+//echo "ola,".$_REQUEST["nome"];
+?>
+```
+
 
 ### POST
 - Envia informações para o servidor
 - POST /test/go.asp 
 - dados sigilosos pois não aparece na URL os parametros
 - os dados são enviados no corpo da requisição 
+- criando formulario
+```html
+<form action="receptor.php" method="POST">
+<label>nome</label>
+<input type="text" name="nome"/>
+<label>senha</label>
+<input type="password" name="senha"/>
+<input type="submit" value="enviar"/>
+<input type="reset" value="limpar" />
+</form>
+```
+- pegando requisição no PHP
+```php
+<?php
+echo "ola,".$_POST["nome"];
+//echo "ola,".$_REQUEST["nome"];
+?>
+```
 
 ### HEAD
 - Recupera apenas cabeçalho HTTP das respostas do servidor
