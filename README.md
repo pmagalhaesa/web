@@ -282,7 +282,7 @@ soma(2,3) // retorna 5
 
       // =================ENVIANDO PUT =================================================================================
     //abrindo uma requisição POST para determinada URL
-    xmlhttp.open("POST", "http://www.smartsoft.com.br/webservice/restifydb/Employees/cliente?_view=json", true);
+    xmlhttp.open("PUT", "http://www.smartsoft.com.br/webservice/restifydb/Employees/cliente?_view=json", true);
 
   // definindo opções no header da requisição
   xmlhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
