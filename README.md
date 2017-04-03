@@ -141,3 +141,151 @@ echo "ola,".$_POST["nome"];
 
 # Arquitetura da Web – Protocolo HTTP – Códigos de retorno
 ![codigo retorno](http://i.imgur.com/Vx7CUg7.png)
+
+
+# CSS
+- Existem 3 formas de escrever um css
+  - inline
+```html
+<label style="color:red">senha</label>
+```
+  - dentro do html na tag head
+```html
+<style>
+input{background-color:blue}
+</style>
+```
+  - arquivo externo
+```html
+<head>
+<link rel="stylesheet" type="text/css" href="theme.css">
+</head>
+```
+  
+# JavaScript
+
+- Linguagem criada em 1995 por Brendan Eich
+- Em 2005, com o advento do AJAX alavancou o uso do JavaScript
+- Javascript adiciona a interatividade e permite a criação de aplicações ricas
+- JavaScript é uma linguagem de script cross-platform (roda em várias plataformas)
+-  O objetivo da criação da linguagem foi atender as seguintes demandas:
+  - Validação de formulários no lado cliente (programa navegador)
+  - Interação com a página
+- Atualmente é utilizada tanto no ambiente cliente (client side) quanto no ambiente servidor (server side)
+- DOM é uma API (application programming interface) orientada a objetosque permite acessar e manipular um documento (conteúdo, estrutura e estilos)
+- JavaScript é baseada em objetos
+- Oferece tipagem dinâmica, tipos de variáveis não são definidos previamente
+- JavaScript é uma linguagem interpretada
+- JavaScript é case sensitive e utiliza conjunto de caracteres Unicode / Nome é diferente de nome que é diferente de NOME
+- O operador (+) pode ser utilizado para concatenar strings
+- criando variavel em JavaScript
+```javascript
+var a = 1;
+```
+  - Existem 3 formas de escrever um Javascript
+  - inline
+```html
+<p onClick="alert('Voce clicou no parágrafo');">...</p>
+```
+  - dentro do html na tag head
+```html
+<script type="text/javascript">
+alert ('Passei por aqui!');
+</script>
+```
+  - arquivo externo
+```html
+<head>
+<script type="text/javascript" src="script.js" />
+</head>
+  ```
+  
+### Funções
+
+- Podem ter qualquer número de parâmetros
+- Os parâmetros não são obrigatórios
+- Mais parâmetros podem ser passados do que especificados pela função
+- Podem retornar um valor explícito ou undefined
+- escrevendo uma função
+
+```javascript
+function soma( x, y ) {
+var total = x + y;
+return total;
+}
+soma() // retorna NaN
+soma(2,3) // retorna 5
+```
+
+### Ajax
+- XML e JavaScript assincrono
+- usado para carregar informações sem precisar recarregar a página
+- usando as tecnologias para:
+  - apresentação baseada em padrões como XHTML e CSS
+  - exibição dinâmica através do DOM
+  - troca e manipulação de dados com XML
+  - JavaScript para juntar tudo isso
+- no modelo classico a lógica é feita toda no servidor, no ajax a lógica é dividida entre cliente e servidor
+- Vantagem:
+  - Melhoria significativa na experiência do usuário
+  - Redução do tráfego na rede
+  - Redução na carga do servidor web
+  - Flexibilidade de desenvolvimento do lado servidor
+- Desvantagens
+  - Maior complexidade no desenvolvimento de aplicações
+  - Exigência um equipamento melhor no lado cliente
+  - Requer compatibilidade do browser com padrões Javascript, HTML e CSS
+  - Possui tratamento diferenciado de um browser web para outro
+  - Tratamento complexo para uso das opções de avançar e voltar do browser
+  
+- estrutura padrão do ajax
+
+```javascript
+//criação de requisiçao AJAX
+    var xmlhttp = new XMLHttpRequest();
+
+    //Função que tem a resposta da requisição
+    xmlhttp.onreadystatechange = function () {
+
+      //status ve se deu tudo certo
+      if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+      }
+    }
+
+      // =================ENVIANDO GET =================================================================================
+    //abrindo uma requisição GET para determinada URL
+    xmlhttp.open("GET", "http://www.smartsoft.com.br/webservice/restifydb/Employees/cliente?_view=json", true);
+          //send chama onreadystatechange
+    xmlhttp.send();
+
+     // =================ENVIANDO GET COM PARAMETRO URL===========================================================================
+    //abrindo uma requisição GET para determinada URL
+        xmlhttp.open("GET", "http://www.smartsoft.com.br/webservice/restifydb/Employees/cliente/"+codigo+"?_view=json", true);
+          //send chama onreadystatechange
+    xmlhttp.send();
+
+     // =================ENVIANDO DELETE COM PARAMETRO URL===========================================================================
+    //abrindo uma requisição GET para determinada URL
+        xmlhttp.open("DELETE", "http://www.smartsoft.com.br/webservice/restifydb/Employees/cliente/"+codigo+"?_view=json", true);
+          //send chama onreadystatechange
+    xmlhttp.send();
+
+
+    // =================ENVIANDO POST =================================================================================
+    //abrindo uma requisição POST para determinada URL
+    xmlhttp.open("POST", "http://www.smartsoft.com.br/webservice/restifydb/Employees/cliente?_view=json", true);
+
+  // definindo opções no header da requisição
+  xmlhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+  // mandando requisição passando os dados do formulário 
+      xmlhttp.send(dados);
+
+      // =================ENVIANDO PUT =================================================================================
+    //abrindo uma requisição POST para determinada URL
+    xmlhttp.open("POST", "http://www.smartsoft.com.br/webservice/restifydb/Employees/cliente?_view=json", true);
+
+  // definindo opções no header da requisição
+  xmlhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+  // mandando requisição passando os dados do formulário 
+      xmlhttp.send(dados);
+```
