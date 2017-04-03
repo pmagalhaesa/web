@@ -245,6 +245,7 @@ soma(2,3) // retorna 5
     - Definir HEADER
     - Manda dados no .send(dados);
   - PUT = EDITAR EXISTENTE
+    - Passar na URL o ID para editar
     - Definir HEADER
     - Manda dados no .send(dados);
   - DELETE = DELETAR EXISTENTE
