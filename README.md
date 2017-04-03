@@ -239,7 +239,17 @@ soma(2,3) // retorna 5
   - Tratamento complexo para uso das opções de avançar e voltar do browser
   
 - estrutura padrão do ajax
-
+  - GET = BUSCAR
+    - Se nao passar parametro ID na URL ele busca TODOS, se passar ele busca apenas por aquele ID
+  - POST = SALVAR NOVO
+    - Definir HEADER
+    - Manda dados no .send(dados);
+  - PUT = EDITAR EXISTENTE
+    - Definir HEADER
+    - Manda dados no .send(dados);
+  - DELETE = DELETAR EXISTENTE
+    - Passar na URL o ID para deletar
+    
 ```javascript
 //criação de requisiçao AJAX
     var xmlhttp = new XMLHttpRequest();
@@ -265,7 +275,7 @@ soma(2,3) // retorna 5
     xmlhttp.send();
 
      // =================ENVIANDO DELETE COM PARAMETRO URL===========================================================================
-    //abrindo uma requisição GET para determinada URL
+    //abrindo uma requisição DELETE para determinada URL
         xmlhttp.open("DELETE", "http://www.smartsoft.com.br/webservice/restifydb/Employees/cliente/"+codigo+"?_view=json", true);
           //send chama onreadystatechange
     xmlhttp.send();
@@ -281,7 +291,7 @@ soma(2,3) // retorna 5
       xmlhttp.send(dados);
 
       // =================ENVIANDO PUT =================================================================================
-    //abrindo uma requisição POST para determinada URL
+    //abrindo uma requisição PUT para determinada URL
     xmlhttp.open("PUT", "http://www.smartsoft.com.br/webservice/restifydb/Employees/cliente?_view=json", true);
 
   // definindo opções no header da requisição
