@@ -300,3 +300,65 @@ soma(2,3) // retorna 5
   // mandando requisição passando os dados do formulário 
       xmlhttp.send(dados);
 ```
+# Servidor
+![imagem-servidor](http://i.imgur.com/q1qKfoI.png)
+
+## Servidor Web
+- Autenticação
+  - Esquemas de Autenticação
+    - Usuário Anônimo + Forms da aplicação (Algumas vezes precisa de login outras nao)
+    - Autenticação Básica (Autenticão pela URL ou pelo próprio browser- envia usuario e senha na base 64)
+    ![imagem-autenticacao-basica](http://i.imgur.com/QbheCZl.png)
+    - Autenticação Digest (Quando um usuário solicita informações de um servidor web, uma caixa de diálogo para inserir o nome de usuário e senha aparece na tela - nao envia usuario e senha, envia apenas hash)
+    ![imagem-autenticacao-digest](http://i.imgur.com/4F4LY6f.png)
+  - Provedores / Integrações
+    - LDAP (Active Directory, Novell NDS)
+    - Kerberos (autentificação de três etapas)
+    - Formulários de login providos pelas aplicações Web
+- Conectividade
+  - Protocolo HTTPS
+  ![imagem-conectividade-https](http://i.imgur.com/hgoJdSI.png)
+    - Um certificado pode apresentar diversos problemas tais como:
+      - Certificado Expirado
+      - Certificado de um site diferente do acessado
+      - Certificado revogado pela autoridade certificadora
+      - Certificados de autoridades certificadoras desconhecidas
+      - Certificados assinados pelo próprio site
+
+  - Criptografia (SSL) (é um certificado que garante a integridade dos dados criptografando eles e garante que o site é confiavel)
+    - Fornece uma conexão criptografada com identificação de cliente e servidor
+    - Baseado em certificados digitais emitidos por autoridades certificadoras
+    - Requer que servidores Web sejam configurados com certificados digitais
+    - Requer que os navegadores reconheçam as autoridades certificadores emissoras dos certificados do servidor
+  - Domínios, IPs e Portas
+  - Controle de Sites
+  - Cache de recursos
+- Gestão do FileSystem (faz a gestão dos arquivos do sistema)
+- Auditoria (Logs de acesso, sistema e erros)
+
+## Servidor de Aplicações
+- Gestão de Aplicações
+- Controle de Sessões
+- Controle de Transações
+- Pool de recursos
+- Integração com bancos de dados
+OBS: Alguns AS possuem módulos que atuam como Servidor web.
+
+### Servidor de Aplicações – Tecnologias
+- PHP
+  - Linguagem de Scripts de código aberto
+  - Pequena curva de aprendizado e desenvolvimento muito simplificado
+  - Compatível com diversos sistemas operacionais e bancos de dados
+  ![imagem-autenticacao-digest](http://i.imgur.com/2RGZMfK.png)
+- ASP.NET
+  - Tecnologia proprietária da Microsoft baseada no servidor Internet Information Server (IIS) e na plataforma Windows
+  - Linguagem de Scripts que permite diversas linguagens de programação (C#, VB, etc.)
+  - Requer o .NET Framework
+  ![imagem-autenticacao-digest](http://i.imgur.com/hQCZ9um.png)
+- Java Server Pages (JSP) e Servlets
+  - Linguagem de scripts baseada em Java
+  - Pode prescindir do servidor Web
+  - Requer um servidor de aplicações Java
+  ![imagem-autenticacao-digest](http://i.imgur.com/QhnYM0P.png)
+- Comparação
+  ![imagem-autenticacao-digest](http://i.imgur.com/xyMd4vH.png)
